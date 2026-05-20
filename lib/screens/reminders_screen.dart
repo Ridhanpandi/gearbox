@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../database/db_helper.dart';
+import '../services/firestore_service.dart';
 import '../services/notification_service.dart';
 
 const kPrimary   = Color(0xFFFF4D00);
@@ -24,7 +24,7 @@ class RemindersScreen extends StatefulWidget {
 
 class _RemindersScreenState extends State<RemindersScreen>
     with SingleTickerProviderStateMixin {
-  final db = DatabaseHelper.instance;
+  final db = FirestoreService.instance;
   List<Map<String, dynamic>> upcoming = [];
   bool _loading = true;
   late AnimationController _fadeCtrl;

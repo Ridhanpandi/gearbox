@@ -12,7 +12,21 @@ class NotificationService {
 
     // ── Fix: set device's actual local timezone ──
     tzData.initializeTimeZones();
-    final String timeZoneName = await FlutterTimezone.getLocalTimezone();
+    String timeZoneName;
+    try {
+      final timezoneInfo = await FlutterTimezone.getLocalTimezone();
+      final raw = timezoneInfo.toString();
+      // Extract IANA timezone from the raw string
+      if (raw.contains('Asia/') || raw.contains('America/') ||
+          raw.contains('Europe/') || raw.contains('Pacific/') ||
+          raw.contains('Africa/') || raw.contains('Australia/')) {
+        timeZoneName = raw.replaceAll(RegExp(r'[()]'), '').trim().split(' ').last;
+      } else {
+        timeZoneName = 'Asia/Kolkata'; // fallback for India
+      }
+    } catch (e) {
+      timeZoneName = 'Asia/Kolkata'; // fallback
+    }
     tz.setLocalLocation(tz.getLocation(timeZoneName));
 
     const android = AndroidInitializationSettings('@mipmap/ic_launcher');

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "621780794063",
+    "project_id": "gearbox-dad7c",
+    "storage_bucket": "gearbox-dad7c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621780794063:android:9f8aef44f2c0f97045d5ba",
+        "android_client_info": {
+          "package_name": "com.example.garage_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgzxeVVUzJ69UDYFq05de0Bh-M59ckVUE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621780794063:android:da94cc96ac231cb645d5ba",
+        "android_client_info": {
+          "package_name": "com.garageapp.gearbox"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgzxeVVUzJ69UDYFq05de0Bh-M59ckVUE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

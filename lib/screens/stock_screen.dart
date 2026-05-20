@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import '../database/db_helper.dart';
+import '../services/firestore_service.dart';
 
 // ── Palette ───────────────────────────────────────────────────────────────────
 const kPrimary   = Color(0xFFFF4D00);
@@ -43,7 +43,7 @@ class StockScreen extends StatefulWidget {
 
 class _StockScreenState extends State<StockScreen>
     with SingleTickerProviderStateMixin {
-  final db = DatabaseHelper.instance;
+  final db = FirestoreService.instance;
   List<Map<String, dynamic>> stock = [];
   final searchCtrl = TextEditingController();
   late AnimationController _fadeCtrl;

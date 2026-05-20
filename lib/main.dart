@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'screens/splash_screen.dart';
 import 'screens/vehicles_screen.dart';
 import 'screens/reminders_screen.dart';
 import 'screens/stock_screen.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
     statusBarColor: Colors.transparent,
     statusBarIconBrightness: Brightness.light,
@@ -72,7 +77,7 @@ class GarageApp extends StatelessWidget {
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         ),
       ),
-      home: const SplashScreen(), // ← only change from original
+      home: const SplashScreen(),
     );
   }
 }
@@ -153,7 +158,7 @@ class _HomeScreenState extends State<HomeScreen>
 
   Widget _buildNavBar() {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.transparent,
       ),
       child: SafeArea(

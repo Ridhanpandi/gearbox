@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import '../database/db_helper.dart';
+import '../services/firestore_service.dart';
 import '../services/notification_service.dart';
 
 // ── Palette ───────────────────────────────────────────────────────────────────
@@ -46,7 +46,7 @@ class VehiclesScreen extends StatefulWidget {
 
 class _VehiclesScreenState extends State<VehiclesScreen>
     with SingleTickerProviderStateMixin {
-  final db = DatabaseHelper.instance;
+  final db = FirestoreService.instance;
   List<Map<String, dynamic>> vehicles = [];
   final Map<int, List<Map<String, dynamic>>> _servicesCache = {};
   int? _expandedId;
