@@ -1,6 +1,6 @@
 # garage_app
 
-A new Flutter project.
+A new Flutter project for garage companies to manage their inventory and customer details efficiently.
 
 ## Getting Started
 
